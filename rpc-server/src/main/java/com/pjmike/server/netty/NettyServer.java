@@ -64,7 +64,7 @@ public class NettyServer implements InitializingBean {
 
                     }
                 });
-        bind(serverBootstrap, 8888);
+        bind(serverBootstrap, 8890);
 //        registry.registry("127.0.0.1:8888");
     }
 

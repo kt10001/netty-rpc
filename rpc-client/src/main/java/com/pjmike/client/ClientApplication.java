@@ -15,6 +15,6 @@ public class ClientApplication {
 //        ConfigurableApplicationContext context = SpringApplication.run(ClientApplication.class, args);
 //        HelloService helloService = context.getBean(HelloService.class);
         HelloService helloService = ProxyFactory.create(HelloService.class);
-        log.info("响应结果“: {}",helloService.hello("pjmike"));
+        log.info("响应结果: {}",helloService.hello("pjmike"));
     }
 }

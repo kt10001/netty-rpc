@@ -35,7 +35,7 @@ public class NettyClient {
         this.host = host;
         this.port = port;
     }
-    public void connect() {
+    public void connect() throws InterruptedException {
         clientHandler = new ClientHandler();
         eventLoopGroup = new NioEventLoopGroup();
         //启动类
@@ -57,8 +57,8 @@ public class NettyClient {
                     }
                 });
         connect(bootstrap, host, port, MAX_RETRY);
-//        ChannelFuture future = bootstrap.connect(host, port).sync();
-//        channel = future.channel();
+        ChannelFuture future = bootstrap.connect(host, port).sync();
+        channel = future.channel();
     }
 
     /**

@@ -4,6 +4,7 @@ import com.pjmike.client.future.DefaultFuture;
 import com.pjmike.common.protocol.RpcRequest;
 import com.pjmike.common.protocol.RpcResponse;
 import io.netty.channel.ChannelDuplexHandler;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelPromise;
 
@@ -15,6 +16,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @author: pjmike
  * @create: 2019/03/29 11:06
  */
+@ChannelHandler.Sharable
 public class ClientHandler extends ChannelDuplexHandler {
     /**
      * 使用Map维护请求对象ID与响应结果Future的映射关系
