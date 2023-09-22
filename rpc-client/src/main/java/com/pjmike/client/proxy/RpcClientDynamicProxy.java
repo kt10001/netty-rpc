@@ -48,7 +48,7 @@ public class RpcClientDynamicProxy<T> implements InvocationHandler {
 //        String[] arrays = address.split(":");
 //        String host = arrays[0];
 //        int port = Integer.parseInt(arrays[1]);
-        NettyClient nettyClient = new NettyClient("47.114.93.164", 8890);
+        NettyClient nettyClient = new NettyClient("127.0.0.1", 8890);
         log.info("开始连接服务端：{}",new Date());
         nettyClient.connect();
         RpcResponse send = nettyClient.send(request);
